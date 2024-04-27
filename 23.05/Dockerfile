@@ -45,10 +45,10 @@ ENV PERL5LIB /home/koha/koha/lib:/home/koha/koha:/home/koha/.local/lib/perl5
 ENV PATH /home/koha/.local/bin:$PATH
 ENV LANG C.UTF-8
 
-EXPOSE 3000
+EXPOSE 9200
 
 COPY docker-entrypoint.sh /usr/local/bin/
 
 WORKDIR /home/koha/koha
 ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["bin/intranet", "prefork"]
+CMD ["bin/elasticsearch", "prefork"]
